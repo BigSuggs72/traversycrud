@@ -1,4 +1,4 @@
-//MayanWolfe VOD at 3:00 pm on 8/7/2022: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022) ****  Stopped at 5:15:30 ****
+//MayanWolfe VOD at 3:00 pm on 8/7/2022: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022) ****  Stopped at 6:10:00 ****
 
 const path = require('path')
 const express = require('express')
@@ -55,7 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 app.use ('/', require('./routes/index'))
-
+app.use ('/auth', require('./routes/auth'))
 
 const PORT = process.env.PORT || 8500
 
