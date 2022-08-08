@@ -1,10 +1,12 @@
-//MayanWolfe VOD at 3:00 pm on 8/7/2022: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022) ****  Stopped at 4:00:30 ****
+//MayanWolfe VOD at 3:00 pm on 8/7/2022: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022) ****  Stopped at 5:15:30 ****
 
 const path = require('path')
 const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars')
+const passport = require('passport')
+const session = require('express-session')
 const connectDB = require('./config/db')
 
 
@@ -13,6 +15,8 @@ dotenv.config({ path: './config/config.env' })
 connectDB()
 const app = express()
 
+//Passport config
+require('./config/passport')(passport)
 
 // Logging
 if (process.env.NODE_ENV === 'development') {
@@ -28,6 +32,21 @@ app.engine('.hbs', exphbs.engine({
     })
 )
 app.set('view engine', '.hbs');
+
+
+// Session
+app.use
+(session({
+        secret:'keyboard cat',
+        resave: false,
+        saveUninitialized: false,
+    })
+)
+
+
+// Passport middleware
+app.use(passport.initialize())
+app.use(passport.session())
 
 
 // Static folder
