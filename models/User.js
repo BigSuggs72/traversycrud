@@ -2,7 +2,7 @@ const MongoStore = require('connect-mongo')
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-    goodleId: {
+    googleId: {
         type: String,
         required: true
     },
