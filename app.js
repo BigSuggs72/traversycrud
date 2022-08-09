@@ -1,4 +1,4 @@
-//MayanWolfe VOD at 3:00 pm on 8/7/2022: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022) ****  Stopped at 6:10:00 ****
+//MayanWolfe VOD at 3:00 pm on 8/7/2022 - Part 1: Let's do the Traversy CRUD OAuth Homework! #100Devs (Homework assignment from Class 43: 8/2/2022)
 
 const path = require('path')
 const express = require('express')
